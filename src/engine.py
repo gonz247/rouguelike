@@ -1,11 +1,12 @@
-from typing import Set, Iterable, Any
+from typing import Any, Iterable, Set
 
-from tcod.context import Context
 from tcod.console import Console
+from tcod.context import Context
 
-from src.game_map import GameMap
 from src.entity import Entity
+from src.game_map import GameMap
 from src.input_handlers import EventHandler
+
 
 class Engine:
     def __init__(self, entities: Set[Entity], event_handler: EventHandler, player: Entity, game_map: GameMap):
@@ -30,5 +31,5 @@ class Engine:
             console.print(entity.x, entity.y, entity.char, fg=entity.color)
 
         context.present(console)
-        
+
         console.clear()
