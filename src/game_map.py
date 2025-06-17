@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, Iterable, Optional
 import numpy as np  # type: ignore
 from tcod.console import Console
 
-from assets.tiles import tile_types
+from . import tile_types
 
 if TYPE_CHECKING:
     from src.engine import Engine

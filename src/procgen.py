@@ -7,7 +7,7 @@ import tcod
 
 from src import entity_factories
 
-from assets.tiles import tile_types
+from . import tile_types
 from src.game_map import GameMap
 
 if TYPE_CHECKING:
