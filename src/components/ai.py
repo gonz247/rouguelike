@@ -11,8 +11,7 @@ from src.components.base_component import BaseComponent
 if TYPE_CHECKING:
     from src.entity import Actor
 
-class BaseAI(Action, BaseComponent):
-    entity: Actor
+class BaseAI(Action):
 
     def perform(self) -> None:
         raise NotImplementedError()
