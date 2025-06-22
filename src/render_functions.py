@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import imp
 from typing import TYPE_CHECKING
 
 from src import color
@@ -40,9 +39,17 @@ def render_names_at_mouse_location(
     console: Console, x: int, y: int, engine: Engine
 ) -> None:
     mouse_x, mouse_y = engine.mouse_location
-
-    names_at_mouse_location = get_names_at_location(
-        x=mouse_x, y=mouse_y, game_map=engine.game_map
-    )
+    ####UNDO THIS CASE AFTER PUSHING, IS FOR TESTING PURPOSES ONLY####
+     # Ensure mouse_x and mouse_y are integers and in bounds
+    if (
+        not isinstance(mouse_x, int)
+        or not isinstance(mouse_y, int)
+        or not engine.game_map.in_bounds(mouse_x, mouse_y)
+    ):
+        names_at_mouse_location = ""
+    else:
+        names_at_mouse_location = get_names_at_location(
+            x=mouse_x, y=mouse_y, game_map=engine.game_map
+        )
 
     console.print(x=x, y=y, string=names_at_mouse_location)
