@@ -4,3 +4,5 @@ venv/
 LIB/
 SCRIPTS/
 *.pyc
+# Saved games
+*.sav
